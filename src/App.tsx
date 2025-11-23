@@ -1,17 +1,26 @@
 import React from 'react';
+import { cn } from "@/lib/utils";
+import { Hero } from "@/components/sections/Hero";
+import { Features } from "@/components/sections/Features";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { Pricing } from "@/components/sections/Pricing";
+import { Footer } from "@/components/sections/Footer";
+import { Navigation } from "@/components/Navigation"; // Assuming you have a Navigation component
 
-export default function App() {
+
+const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <main className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold py-16 text-center">
-          The user wants to create a landing page. The landing page is for their dog Bailey.
-        </h1>
-        <p className="text-center text-muted-foreground mb-8">
-          Your AI-generated landing page is ready! Components will be imported below.
-        </p>
-        {/* Generated sections will be imported and rendered here */}
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
+      <Navigation />
+      <main className="flex-grow">
+        <Hero />
+        <Features />
+        <Testimonials />
+        <Pricing />
       </main>
+      <Footer />
     </div>
   );
-}
+};
+
+export default App;
